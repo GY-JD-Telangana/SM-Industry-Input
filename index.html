@@ -4,169 +4,582 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTD Industry Collection</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700&display=swap');
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f3f2fd;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .form-container {
-            background-color: #ffffff;
-            max-width: 600px;
-            width: 100%;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border-top: 8px solid #5746e3;
-        }
-        h2 {
-            margin-top: 0;
-            color: #202124;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #202124;
-        }
-        .required::after {
-            content: " *";
-            color: #d93025;
-        }
-        select, input[type="text"], input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #dadce0;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 15px;
-        }
-        select:focus, input:focus {
-            outline: none;
-            border-color: #5746e3;
-        }
-        button {
-            background-color: #5746e3;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #4535b7;
-        }
-        #message {
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 4px;
-            display: none;
-            text-align: center;
-            font-weight: 600;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 min-h-screen text-slate-800 antialiased py-6 px-4 sm:px-6 lg:px-8">
 
-<div class="form-container">
-    <h2>MTD Industry Collection</h2>
-    <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 20px;">
-    
-    <form id="mtdForm">
-        <div class="form-group">
-            <label for="smName" class="required">SM Name</label>
-            <select id="smName" required>
-                <option value="" disabled selected>Choose</option>
-                <option value="Sanjeev Reddy">Sanjeev Reddy</option>
-                <option value="Ganesh">Ganesh</option>
-                <option value="Venkat Reddy">Venkat Reddy</option>
-                <option value="K Srinivas">K Srinivas</option>
-                <option value="K Praveen Reddy">K Praveen Reddy</option>
-                <option value="K Vijay Kumar">K Vijay Kumar</option>
-                <option value="K Vijay Bhaskar">K Vijay Bhaskar</option>
-                <option value="K Nageshwar Rao">K Nageshwar Rao</option>
-                <option value="Alleshwer Narsaiah">Alleshwer Narsaiah</option>
-                <option value="Hanmandlu Korva">Hanmandlu Korva</option>
-                <option value="Prajapathi Dugyala">Prajapathi Dugyala</option>
-                <option value="Ramreddy Kunduri">Ramreddy Kunduri</option>
-            </select>
+    <div class="max-w-xl mx-auto space-y-6">
+        
+        <!-- Header Brand Card -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+            <div class="h-3 bg-indigo-600"></div>
+            <div class="p-6 sm:p-8">
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">MTD Industry Collection</h1>
+                <p class="mt-2 text-slate-500 text-sm sm:text-base">Record brand quantities and district TR logs quickly and securely.</p>
+                <div class="mt-4 flex items-center gap-2 text-xs text-indigo-600 bg-indigo-50 font-medium px-3 py-1.5 rounded-lg w-fit">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                    </span>
+                    Connected to Live Spreadsheet
+                </div>
+            </div>
         </div>
 
-        <div class="form-group"><label for="jd" class="required">JD</label><input type="number" id="jd" required min="0"></div>
-        <div class="form-group"><label for="mm" class="required">M&M</label><input type="number" id="mm" required min="0"></div>
-        <div class="form-group"><label for="swaraj" class="required">Swaraj</label><input type="number" id="swaraj" required min="0"></div>
-        <div class="form-group"><label for="sonalika" class="required">Sonalika</label><input type="number" id="sonalika" required min="0"></div>
-        <div class="form-group"><label for="eicher" class="required">Eicher</label><input type="number" id="eicher" required min="0"></div>
-        <div class="form-group"><label for="escorts" class="required">Escorts</label><input type="number" id="escorts" required min="0"></div>
-        <div class="form-group"><label for="tafe" class="required">TAFE</label><input type="number" id="tafe" required min="0"></div>
-        <div class="form-group"><label for="nhf" class="required">NHF</label><input type="number" id="nhf" required min="0"></div>
-        <div class="form-group"><label for="kubota" class="required">Kubota</label><input type="number" id="kubota" required min="0"></div>
-        <div class="form-group"><label for="solis" class="required">Solis</label><input type="number" id="solis" required min="0"></div>
-        <div class="form-group"><label for="others" class="required">Others</label><input type="number" id="others" required min="0"></div>
+        <!-- Main Form -->
+        <form id="submissionForm" class="space-y-6">
+            
+            <!-- SM SELECT CARD -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100 space-y-4">
+                <label for="smName" class="block text-sm font-semibold text-slate-900">
+                    SM Name <span class="text-rose-500">*</span>
+                </label>
+                <p class="text-xs text-slate-400">Please select your name to load your assigned district TR input fields below.</p>
+                <div class="relative">
+                    <select id="smName" required class="block w-full rounded-xl border border-slate-200 bg-slate-50 py-3.5 px-4 text-slate-900 focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm transition-all duration-200 appearance-none cursor-pointer">
+                        <option value="" disabled selected>Choose Staff Member</option>
+                        <option value="Sanjeev Reddy">Sanjeev Reddy</option>
+                        <option value="Ganesh">Ganesh</option>
+                        <option value="Hanumandlu">Hanumandlu</option>
+                        <option value="K Praveen Reddy">K Praveen Reddy</option>
+                        <option value="K Nageshwar Rao">K Nageshwar Rao</option>
+                        <option value="K Vijay Bhaskar">K Vijay Bhaskar</option>
+                        <option value="Narasiah">Narasiah</option>
+                        <option value="Prajapathi">Prajapathi</option>
+                        <option value="Rami Reddy">Rami Reddy</option>
+                        <option value="K Srinivas">K Srinivas</option>
+                        <option value="Venkat Reddy">Venkat Reddy</option>
+                        <option value="K Vijay Kumar">K Vijay Kumar</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-slate-400">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+                </div>
+            </div>
 
-        <button type="submit">Submit Responses</button>
-    </form>
-    
-    <div id="message"></div>
-</div>
+            <!-- BRAND VALUES CARD -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100 space-y-6">
+                <div class="border-b border-slate-100 pb-4">
+                    <h2 class="text-lg font-bold text-slate-900">Brand Specific Quantities</h2>
+                    <p class="text-xs text-slate-400 mt-1">Please enter quantities for each respective brand (All fields are mandatory).</p>
+                </div>
 
-<script>
-    // REPLACE THIS URL WITH THE WEB APP URL COPY-PASTED FROM GOOGLE APPS SCRIPT STEP
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzYWPqBLN9TO0YvoB00q0xbh4ETmeF6uFOZ6yxrLJyG23lWZhg2RwbEsjytQ9yNwzI49Q/exec";
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Brand list -->
+                    <div class="brand-item space-y-2">
+                        <label class="block text-xs font-semibold text-slate-700 tracking-wide uppercase">JD <span class="text-rose-500">*</span></label>
+                        <div class="flex rounded-lg shadow-sm border border-slate-200 overflow-hidden bg-slate-50 focus-within:ring-1 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                            <button type="button" onclick="adjustValue('jd', -1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-r border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">-</button>
+                            <input type="number" id="jd" required min="0" value="0" class="w-full text-center py-2 bg-transparent text-sm focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="adjustValue('jd', 1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-l border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">+</button>
+                        </div>
+                    </div>
 
-    document.getElementById('mtdForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const msgDiv = document.getElementById('message');
-        msgDiv.style.display = 'block';
-        msgDiv.style.backgroundColor = '#e8f0fe';
-        msgDiv.style.color = '#1a73e8';
-        msgDiv.innerText = "Submitting, please wait...";
+                    <div class="brand-item space-y-2">
+                        <label class="block text-xs font-semibold text-slate-700 tracking-wide uppercase">M&M <span class="text-rose-500">*</span></label>
+                        <div class="flex rounded-lg shadow-sm border border-slate-200 overflow-hidden bg-slate-50 focus-within:ring-1 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                            <button type="button" onclick="adjustValue('mm', -1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-r border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">-</button>
+                            <input type="number" id="mm" required min="0" value="0" class="w-full text-center py-2 bg-transparent text-sm focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="adjustValue('mm', 1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-l border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">+</button>
+                        </div>
+                    </div>
 
-        const formData = {
-            smName: document.getElementById('smName').value,
-            jd: document.getElementById('jd').value,
-            mm: document.getElementById('mm').value,
-            swaraj: document.getElementById('swaraj').value,
-            sonalika: document.getElementById('sonalika').value,
-            eicher: document.getElementById('eicher').value,
-            escorts: document.getElementById('escorts').value,
-            tafe: document.getElementById('tafe').value,
-            nhf: document.getElementById('nhf').value,
-            kubota: document.getElementById('kubota').value,
-            solis: document.getElementById('solis').value,
-            others: document.getElementById('others').value
+                    <div class="brand-item space-y-2">
+                        <label class="block text-xs font-semibold text-slate-700 tracking-wide uppercase">Swaraj <span class="text-rose-500">*</span></label>
+                        <div class="flex rounded-lg shadow-sm border border-slate-200 overflow-hidden bg-slate-50 focus-within:ring-1 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                            <button type="button" onclick="adjustValue('swaraj', -1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-r border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">-</button>
+                            <input type="number" id="swaraj" required min="0" value="0" class="w-full text-center py-2 bg-transparent text-sm focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="adjustValue('swaraj', 1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-l border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">+</button>
+                        </div>
+                    </div>
+
+                    <div class="brand-item space-y-2">
+                        <label class="block text-xs font-semibold text-slate-700 tracking-wide uppercase">Sonalika <span class="text-rose-500">*</span></label>
+                        <div class="flex rounded-lg shadow-sm border border-slate-200 overflow-hidden bg-slate-50 focus-within:ring-1 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                            <button type="button" onclick="adjustValue('sonalika', -1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-r border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">-</button>
+                            <input type="number" id="sonalika" required min="0" value="0" class="w-full text-center py-2 bg-transparent text-sm focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="adjustValue('sonalika', 1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-l border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">+</button>
+                        </div>
+                    </div>
+
+                    <div class="brand-item space-y-2">
+                        <label class="block text-xs font-semibold text-slate-700 tracking-wide uppercase">Eicher <span class="text-rose-500">*</span></label>
+                        <div class="flex rounded-lg shadow-sm border border-slate-200 overflow-hidden bg-slate-50 focus-within:ring-1 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                            <button type="button" onclick="adjustValue('eicher', -1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-r border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">-</button>
+                            <input type="number" id="eicher" required min="0" value="0" class="w-full text-center py-2 bg-transparent text-sm focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="adjustValue('eicher', 1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-l border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">+</button>
+                        </div>
+                    </div>
+
+                    <div class="brand-item space-y-2">
+                        <label class="block text-xs font-semibold text-slate-700 tracking-wide uppercase">Escorts <span class="text-rose-500">*</span></label>
+                        <div class="flex rounded-lg shadow-sm border border-slate-200 overflow-hidden bg-slate-50 focus-within:ring-1 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                            <button type="button" onclick="adjustValue('escorts', -1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-r border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">-</button>
+                            <input type="number" id="escorts" required min="0" value="0" class="w-full text-center py-2 bg-transparent text-sm focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="adjustValue('escorts', 1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-l border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">+</button>
+                        </div>
+                    </div>
+
+                    <div class="brand-item space-y-2">
+                        <label class="block text-xs font-semibold text-slate-700 tracking-wide uppercase">TAFE <span class="text-rose-500">*</span></label>
+                        <div class="flex rounded-lg shadow-sm border border-slate-200 overflow-hidden bg-slate-50 focus-within:ring-1 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                            <button type="button" onclick="adjustValue('tafe', -1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-r border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">-</button>
+                            <input type="number" id="tafe" required min="0" value="0" class="w-full text-center py-2 bg-transparent text-sm focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="adjustValue('tafe', 1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-l border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">+</button>
+                        </div>
+                    </div>
+
+                    <div class="brand-item space-y-2">
+                        <label class="block text-xs font-semibold text-slate-700 tracking-wide uppercase">NHF <span class="text-rose-500">*</span></label>
+                        <div class="flex rounded-lg shadow-sm border border-slate-200 overflow-hidden bg-slate-50 focus-within:ring-1 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                            <button type="button" onclick="adjustValue('nhf', -1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-r border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">-</button>
+                            <input type="number" id="nhf" required min="0" value="0" class="w-full text-center py-2 bg-transparent text-sm focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="adjustValue('nhf', 1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-l border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">+</button>
+                        </div>
+                    </div>
+
+                    <div class="brand-item space-y-2">
+                        <label class="block text-xs font-semibold text-slate-700 tracking-wide uppercase">Kubota <span class="text-rose-500">*</span></label>
+                        <div class="flex rounded-lg shadow-sm border border-slate-200 overflow-hidden bg-slate-50 focus-within:ring-1 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                            <button type="button" onclick="adjustValue('kubota', -1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-r border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">-</button>
+                            <input type="number" id="kubota" required min="0" value="0" class="w-full text-center py-2 bg-transparent text-sm focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="adjustValue('kubota', 1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-l border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">+</button>
+                        </div>
+                    </div>
+
+                    <div class="brand-item space-y-2">
+                        <label class="block text-xs font-semibold text-slate-700 tracking-wide uppercase">Solis <span class="text-rose-500">*</span></label>
+                        <div class="flex rounded-lg shadow-sm border border-slate-200 overflow-hidden bg-slate-50 focus-within:ring-1 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                            <button type="button" onclick="adjustValue('solis', -1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-r border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">-</button>
+                            <input type="number" id="solis" required min="0" value="0" class="w-full text-center py-2 bg-transparent text-sm focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="adjustValue('solis', 1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-l border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">+</button>
+                        </div>
+                    </div>
+
+                    <div class="brand-item space-y-2 sm:col-span-2">
+                        <label class="block text-xs font-semibold text-slate-700 tracking-wide uppercase">Others <span class="text-rose-500">*</span></label>
+                        <div class="flex rounded-lg shadow-sm border border-slate-200 overflow-hidden bg-slate-50 focus-within:ring-1 focus-within:ring-indigo-500 focus-within:border-indigo-500">
+                            <button type="button" onclick="adjustValue('others', -1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-r border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">-</button>
+                            <input type="number" id="others" required min="0" value="0" class="w-full text-center py-2 bg-transparent text-sm focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="adjustValue('others', 1)" class="px-3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 border-l border-slate-200 text-slate-600 font-bold transition-all text-sm select-none">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Separated specific custom-colored KPI metrics box -->
+                <div class="mt-6 pt-6 border-t border-slate-100">
+                    <div class="p-5 bg-amber-50 rounded-2xl border border-amber-200/60 space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="p-1 rounded bg-amber-200/60 text-amber-800">
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                            </span>
+                            <label for="saleLossLms" class="block text-xs font-bold text-amber-800 tracking-wide uppercase">
+                                Sale Loss in LMS <span class="text-rose-500">*</span>
+                            </label>
+                        </div>
+                        <p class="text-xs text-amber-600/90 leading-relaxed">Please record the total counts of sales loss instances compiled in the LMS platform.</p>
+                        <div class="flex rounded-xl shadow-sm border border-amber-200 overflow-hidden bg-white focus-within:ring-1 focus-within:ring-amber-500 focus-within:border-amber-500 max-w-xs">
+                            <button type="button" onclick="adjustValue('saleLossLms', -1)" class="px-4 bg-amber-50/50 hover:bg-amber-100 active:bg-amber-200 border-r border-amber-200 text-amber-700 font-bold transition-all text-sm select-none">-</button>
+                            <input type="number" id="saleLossLms" required min="0" value="0" class="w-full text-center py-2.5 bg-transparent text-sm font-semibold text-amber-900 focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                            <button type="button" onclick="adjustValue('saleLossLms', 1)" class="px-4 bg-amber-50/50 hover:bg-amber-100 active:bg-amber-200 border-l border-amber-200 text-amber-700 font-bold transition-all text-sm select-none">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LIVE METRICS REAL-TIME PREVIEW CARD -->
+                <div class="mt-6 pt-6 border-t border-slate-100">
+                    <div class="p-5 bg-indigo-50/70 rounded-2xl border border-indigo-100 space-y-4">
+                        <div class="flex items-center justify-between border-b border-indigo-100/60 pb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="p-1 rounded bg-indigo-100 text-indigo-700">
+                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </span>
+                                <h3 class="text-xs font-extrabold text-indigo-900 tracking-wide uppercase">Live Performance Preview</h3>
+                            </div>
+                            <span class="text-[10px] bg-indigo-100 text-indigo-700 font-semibold px-2 py-0.5 rounded-full uppercase tracking-wider">Dynamic</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Metric 1: Market Share -->
+                            <div class="bg-white p-4 rounded-xl border border-indigo-100/40 shadow-sm flex flex-col justify-between">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Market Share (JD)</span>
+                                <div class="mt-1 flex items-baseline gap-1">
+                                    <span id="liveMarketShare" class="text-lg sm:text-xl font-extrabold text-indigo-900">0.00%</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400 mt-1">JD / Total Industry</span>
+                            </div>
+
+                            <!-- Metric 2: PI -->
+                            <div class="bg-white p-4 rounded-xl border border-indigo-100/40 shadow-sm flex flex-col justify-between">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Participation Index (PI)</span>
+                                <div class="mt-1 flex items-baseline gap-1">
+                                    <span id="livePI" class="text-lg sm:text-xl font-extrabold text-amber-600">0.00%</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400 mt-1">(JD + LMS) / Total Ind</span>
+                            </div>
+                        </div>
+
+                        <!-- Mini total volume bar -->
+                        <div class="flex items-center justify-between text-xs text-indigo-900/80 px-1 pt-1 font-medium">
+                            <span>Total Volume (All Brands):</span>
+                            <span id="liveTotalVolume" class="font-bold text-sm">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DYNAMIC REGIONAL TR CARD -->
+            <div id="dynamicCard" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100 space-y-6 hidden transition-all duration-300 scale-95 opacity-0">
+                <div class="border-b border-slate-100 pb-4">
+                    <h2 class="text-lg font-bold text-slate-900">Territory TR Tracker</h2>
+                    <p class="text-xs text-slate-400 mt-1">Please enter the current TR numbers for your assigned districts (All fields are mandatory).</p>
+                </div>
+                
+                <div id="dynamicFieldsContainer" class="space-y-4">
+                    <!-- Dynamically loaded inputs will appear here -->
+                </div>
+            </div>
+
+            <!-- SUBMIT ACTION -->
+            <div class="pt-2">
+                <button type="submit" class="w-full flex justify-center items-center gap-2 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-bold py-4 px-6 rounded-2xl text-base shadow-md shadow-indigo-100 hover:shadow-lg transition-all duration-200 cursor-pointer">
+                    Submit Response
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- NOTIFICATION DIALOGS -->
+    <div id="alertOverlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden opacity-0 transition-opacity duration-300">
+        <div id="alertBox" class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full shadow-2xl border border-slate-100 text-center transform scale-95 transition-transform duration-300">
+            <div id="alertIconContainer" class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-emerald-100 text-emerald-600 mb-4">
+                <!-- SVG Success Icon -->
+                <svg id="successIcon" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <!-- SVG Loading Spinner -->
+                <svg id="spinnerIcon" class="animate-spin h-8 w-8 text-indigo-600 hidden" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <!-- SVG Error Icon -->
+                <svg id="errorIcon" class="h-8 w-8 text-rose-600 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </div>
+            <h3 id="alertTitle" class="text-xl font-bold text-slate-950">Submitting...</h3>
+            <p id="alertBody" class="text-sm text-slate-500 mt-2">Uploading results to the spreadsheet. Please hold on.</p>
+            <button id="alertActionBtn" type="button" onclick="closeAlert()" class="mt-6 w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold rounded-xl transition-all hidden">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // DEPLOYMENT WEB APP URL FROM GOOGLE APPS SCRIPT
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwqV56H9qO17V7g3kSgH6F684V_REPLACEME/exec";
+
+        // 12 staff members territory details mapping
+        const smTerritoryMapping = {
+            "Sanjeev Reddy": [
+                { id: "tr_tg33", label: "Current TR number in JOGULAMBA" },
+                { id: "tr_tg31", label: "Current TR number in Nagarkurnool" },
+                { id: "tr_tg32", label: "Current TR number in Narayanpet" },
+                { id: "tr_tg30", label: "Current TR number in Wanaparthy" },
+                { id: "tr_tg06", label: "Current TR number in MAHABOOBNAGAR" }
+            ],
+            "Ganesh": [
+                { id: "tr_tg01", label: "Current TR number in Adilabad" },
+                { id: "tr_tg18", label: "Current TR number in Nirmal" }
+            ],
+            "Hanumandlu": [
+                { id: "tr_tg17", label: "Current TR number in Kamareddy" }
+            ],
+            "K Praveen Reddy": [
+                { id: "tr_tg27", label: "Current TR number in Jangoan" },
+                { id: "tr_tg26", label: "Current TR number in Mahabubabad" }
+            ],
+            "K Nageshwar Rao": [
+                { id: "tr_tg03", label: "Current TR number in HANUMAKONDA" },
+                { id: "tr_tg25", label: "Current TR number in JAYASHANKAR" },
+                { id: "tr_tg24", label: "Current TR number in WARANGAL" },
+                { id: "tr_tg37", label: "Current TR number in MULUGU" }
+            ],
+            "K Vijay Bhaskar": [
+                { id: "tr_tg21", label: "Current TR number in JAGITYAL" },
+                { id: "tr_tg02", label: "Current TR number in Karimnagar" },
+                { id: "tr_tg22", label: "Current TR number in Peddapalli" },
+                { id: "tr_tg23", label: "Current TR number in RAJANNA" }
+            ],
+            "Narasiah": [
+                { id: "tr_tg16", label: "Current TR number in Nizamabad" }
+            ],
+            "Prajapathi": [
+                { id: "tr_tg05", label: "Current TR number in Nalgonda" },
+                { id: "tr_tg15", label: "Current TR number in YADADRI" }
+            ],
+            "Rami Reddy": [
+                { id: "tr_tg29", label: "Current TR number in Suryapet" },
+                { id: "tr_tg28", label: "Current TR number in BHADRADRI" },
+                { id: "tr_tg04", label: "Current TR number in Khammam" }
+            ],
+            "K Srinivas": [
+                { id: "tr_tg09", label: "Current TR number in Hyderabad" },
+                { id: "tr_tg08", label: "Current TR number in MEDCHAL M-GIRI" },
+                { id: "tr_ts07", label: "Current TR number in Ranga Reddy" },
+                { id: "tr_tg34", label: "Current TR number in Vikarabad" }
+            ],
+            "Venkat Reddy": [
+                { id: "tr_tg36", label: "Current TR number in Siddipet" },
+                { id: "tr_tg35", label: "Current TR number in Medak" },
+                { id: "tr_tg15_2", label: "Current TR number in Sangareddy" }
+            ],
+            "K Vijay Kumar": [
+                { id: "tr_tg19", label: "Current TR number in MANCHERIYAL" },
+                { id: "tr_tg20", label: "Current TR number in KOMRAMBHEEM" }
+            ]
         };
 
-        fetch(WEB_APP_URL, {
-            method: 'POST',
-            mode: 'no-cors', // Essential step to prevent cross-origin tracking redirect errors with Apps Script
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        })
-        .then(() => {
-            msgDiv.style.backgroundColor = '#e6f4ea';
-            msgDiv.style.color = '#137333';
-            msgDiv.innerText = "Success! Your responses have been recorded.";
-            document.getElementById('mtdForm').reset();
-        })
-        .catch(err => {
-            msgDiv.style.backgroundColor = '#fce8e6';
-            msgDiv.style.color = '#c5221f';
-            msgDiv.innerText = "Error reporting data. Please try again.";
-            console.error(err);
+        const smSelect = document.getElementById('smName');
+        const dynamicCard = document.getElementById('dynamicCard');
+        const dynamicFieldsContainer = document.getElementById('dynamicFieldsContainer');
+
+        // Handle Live Computations
+        function calculateLiveMetrics() {
+            const jd = parseInt(document.getElementById('jd').value) || 0;
+            const mm = parseInt(document.getElementById('mm').value) || 0;
+            const swaraj = parseInt(document.getElementById('swaraj').value) || 0;
+            const sonalika = parseInt(document.getElementById('sonalika').value) || 0;
+            const eicher = parseInt(document.getElementById('eicher').value) || 0;
+            const escorts = parseInt(document.getElementById('escorts').value) || 0;
+            const tafe = parseInt(document.getElementById('tafe').value) || 0;
+            const nhf = parseInt(document.getElementById('nhf').value) || 0;
+            const kubota = parseInt(document.getElementById('kubota').value) || 0;
+            const solis = parseInt(document.getElementById('solis').value) || 0;
+            const others = parseInt(document.getElementById('others').value) || 0;
+            const saleLossLms = parseInt(document.getElementById('saleLossLms').value) || 0;
+
+            // totalBrands = Sum of all brand values
+            const totalBrands = jd + mm + swaraj + sonalika + eicher + escorts + tafe + nhf + kubota + solis + others;
+
+            // Market share calculations: JD divided by sum of all brands
+            const marketShare = totalBrands > 0 ? (jd / totalBrands) * 100 : 0;
+
+            // PI calculations: (sum of JD + Sale loss in LMS) divided by sum of all brands
+            const pi = totalBrands > 0 ? ((jd + saleLossLms) / totalBrands) * 100 : 0;
+
+            // Update DOM element values in real-time
+            document.getElementById('liveMarketShare').innerText = marketShare.toFixed(2) + '%';
+            document.getElementById('livePI').innerText = pi.toFixed(2) + '%';
+            document.getElementById('liveTotalVolume').innerText = totalBrands;
+        }
+
+        // Attach listeners to input changes
+        document.getElementById('submissionForm').addEventListener('input', calculateLiveMetrics);
+
+        // Handle SM select changes to build territory fields dynamically
+        smSelect.addEventListener('change', function() {
+            const selectedSM = this.value;
+            const fields = smTerritoryMapping[selectedSM];
+
+            if (fields && fields.length > 0) {
+                // Clear container first
+                dynamicFieldsContainer.innerHTML = '';
+
+                // Build each dependent textbox dynamically with required fields (type set to text)
+                fields.forEach(field => {
+                    const fieldWrapper = document.createElement('div');
+                    fieldWrapper.className = 'space-y-1.5';
+
+                    fieldWrapper.innerHTML = `
+                        <label for="${field.id}" class="block text-xs font-semibold text-slate-700 tracking-wide uppercase">
+                            ${field.label} <span class="text-rose-500">*</span>
+                        </label>
+                        <input type="text" id="${field.id}" required placeholder="Enter TR number/details"
+                               class="block w-full rounded-xl border border-slate-200 bg-slate-50 py-3 px-4 text-slate-900 focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm transition-all duration-200">
+                    `;
+                    dynamicFieldsContainer.appendChild(fieldWrapper);
+                });
+
+                // Smooth scale entry transition
+                dynamicCard.classList.remove('hidden');
+                setTimeout(() => {
+                    dynamicCard.classList.remove('scale-95', 'opacity-0');
+                    dynamicCard.classList.add('scale-100', 'opacity-100');
+                }, 50);
+
+            } else {
+                // Hide dynamic container smoothly if nothing selected
+                dynamicCard.classList.add('scale-95', 'opacity-0');
+                dynamicCard.classList.remove('scale-100', 'opacity-100');
+                setTimeout(() => {
+                    dynamicCard.classList.add('hidden');
+                    dynamicFieldsContainer.innerHTML = '';
+                }, 300);
+            }
         });
-    });
-</script>
+
+        // Numeric increment helpers
+        function adjustValue(id, change) {
+            const input = document.getElementById(id);
+            if (input) {
+                let currentVal = parseInt(input.value) || 0;
+                let newVal = currentVal + change;
+                if (newVal < 0) newVal = 0;
+                input.value = newVal;
+                calculateLiveMetrics(); // Fire live recalculations after adjustment
+            }
+        }
+
+        // Custom notification dialog trigger controller
+        const overlay = document.getElementById('alertOverlay');
+        const alertBox = document.getElementById('alertBox');
+        const alertTitle = document.getElementById('alertTitle');
+        const alertBody = document.getElementById('alertBody');
+        const actionBtn = document.getElementById('alertActionBtn');
+        const spinnerIcon = document.getElementById('spinnerIcon');
+        const successIcon = document.getElementById('successIcon');
+        const errorIcon = document.getElementById('errorIcon');
+        const iconContainer = document.getElementById('alertIconContainer');
+
+        function showAlert(status, title, body) {
+            overlay.classList.remove('hidden');
+            setTimeout(() => {
+                overlay.classList.remove('opacity-0');
+                alertBox.classList.remove('scale-95');
+                alertBox.classList.add('scale-100');
+            }, 50);
+
+            // Configure state details
+            alertTitle.innerText = title;
+            alertBody.innerText = body;
+
+            // Reset icons
+            spinnerIcon.classList.add('hidden');
+            successIcon.classList.add('hidden');
+            errorIcon.classList.add('hidden');
+            actionBtn.classList.add('hidden');
+            iconContainer.className = "mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-4";
+
+            if (status === 'loading') {
+                spinnerIcon.classList.remove('hidden');
+                iconContainer.classList.add('bg-indigo-50', 'text-indigo-600');
+            } else if (status === 'success') {
+                successIcon.classList.remove('hidden');
+                actionBtn.classList.remove('hidden');
+                iconContainer.classList.add('bg-emerald-100', 'text-emerald-600');
+            } else if (status === 'error') {
+                errorIcon.classList.remove('hidden');
+                actionBtn.classList.remove('hidden');
+                iconContainer.classList.add('bg-rose-100', 'text-rose-600');
+            }
+        }
+
+        function closeAlert() {
+            alertBox.classList.add('scale-95');
+            alertBox.classList.remove('scale-100');
+            overlay.classList.add('opacity-0');
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+            }, 300);
+        }
+
+        // Main Submit Event Listener
+        document.getElementById('submissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Fire modal dialog indicating uploading progress
+            showAlert('loading', 'Submitting...', 'Sending your records to the spreadsheet. Please stay on this page.');
+
+            // Collate baseline brand quantities
+            const smName = smSelect.value;
+            const formData = {
+                smName: smName,
+                jd: parseInt(document.getElementById('jd').value) || 0,
+                mm: parseInt(document.getElementById('mm').value) || 0,
+                swaraj: parseInt(document.getElementById('swaraj').value) || 0,
+                sonalika: parseInt(document.getElementById('sonalika').value) || 0,
+                eicher: parseInt(document.getElementById('eicher').value) || 0,
+                escorts: parseInt(document.getElementById('escorts').value) || 0,
+                tafe: parseInt(document.getElementById('tafe').value) || 0,
+                nhf: parseInt(document.getElementById('nhf').value) || 0,
+                kubota: parseInt(document.getElementById('kubota').value) || 0,
+                solis: parseInt(document.getElementById('solis').value) || 0,
+                others: parseInt(document.getElementById('others').value) || 0,
+                dynamicFields: {}
+            };
+
+            const saleLossLmsVal = parseInt(document.getElementById('saleLossLms').value) || 0;
+            const totalBrands = formData.jd + formData.mm + formData.swaraj + formData.sonalika + formData.eicher + formData.escorts + formData.tafe + formData.nhf + formData.kubota + formData.solis + formData.others;
+
+            const marketShareCalculated = totalBrands > 0 ? (formData.jd / totalBrands) * 100 : 0;
+            const piCalculated = totalBrands > 0 ? ((formData.jd + saleLossLmsVal) / totalBrands) * 100 : 0;
+
+            // Safely pack the custom fields into the dynamic payload list
+            formData.dynamicFields["Sale Loss in LMS"] = saleLossLmsVal;
+            formData.dynamicFields["Total Volume"] = totalBrands;
+            formData.dynamicFields["Market Share (%)"] = parseFloat(marketShareCalculated.toFixed(2));
+            formData.dynamicFields["PI (%)"] = parseFloat(piCalculated.toFixed(2));
+
+            // Grab any active dynamic territory parameters (stored as text string)
+            const fields = smTerritoryMapping[smName];
+            if (fields) {
+                fields.forEach(field => {
+                    const inputElem = document.getElementById(field.id);
+                    if (inputElem) {
+                        formData.dynamicFields[field.label] = inputElem.value.trim();
+                    }
+                });
+            }
+
+            // Fire secure POST connection
+            fetch(WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Bypasses App Script cross-origin redirect errors securely
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+            .then(() => {
+                // Display positive result confirmation modal
+                showAlert('success', 'Submitted Successfully!', 'Your responses have been saved to the Sales Manager Industry Capture sheet.');
+                
+                // Clear inputs
+                document.getElementById('submissionForm').reset();
+                
+                // Reset counter defaults manually
+                ['jd', 'mm', 'swaraj', 'sonalika', 'eicher', 'escorts', 'tafe', 'nhf', 'kubota', 'solis', 'others', 'saleLossLms'].forEach(id => {
+                    document.getElementById(id).value = "0";
+                });
+                
+                // Reset calculations preview panel
+                calculateLiveMetrics();
+                
+                // Hide territory container cleanly
+                dynamicCard.classList.add('scale-95', 'opacity-0');
+                dynamicCard.classList.remove('scale-100', 'opacity-100');
+                setTimeout(() => {
+                    dynamicCard.classList.add('hidden');
+                    dynamicFieldsContainer.innerHTML = '';
+                }, 300);
+            })
+            .catch(error => {
+                showAlert('error', 'Submission Failed', 'Something went wrong while saving your details. Please check your connection and try again.');
+                console.error('Error reporting database records:', error);
+            });
+        });
+
+        // Initialize empty live metrics preview on page load
+        calculateLiveMetrics();
+    </script>
 </body>
 </html>
