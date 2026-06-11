@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTD Industry Collection</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f2fd;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .form-container {
+            background-color: #ffffff;
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-top: 8px solid #5746e3;
+        }
+        h2 {
+            margin-top: 0;
+            color: #202124;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #202124;
+        }
+        .required::after {
+            content: " *";
+            color: #d93025;
+        }
+        select, input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+        select:focus, input:focus {
+            outline: none;
+            border-color: #5746e3;
+        }
+        button {
+            background-color: #5746e3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #4535b7;
+        }
+        #message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+            text-align: center;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>MTD Industry Collection</h2>
+    <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 20px;">
+    
+    <form id="mtdForm">
+        <div class="form-group">
+            <label for="smName" class="required">SM Name</label>
+            <select id="smName" required>
+                <option value="" disabled selected>Choose</option>
+                <option value="Sanjeev Reddy">Sanjeev Reddy</option>
+                <option value="Ganesh">Ganesh</option>
+                <option value="Venkat Reddy">Venkat Reddy</option>
+                <option value="K Srinivas">K Srinivas</option>
+                <option value="K Praveen Reddy">K Praveen Reddy</option>
+                <option value="K Vijay Kumar">K Vijay Kumar</option>
+                <option value="K Vijay Bhaskar">K Vijay Bhaskar</option>
+                <option value="K Nageshwar Rao">K Nageshwar Rao</option>
+                <option value="Alleshwer Narsaiah">Alleshwer Narsaiah</option>
+                <option value="Hanmandlu Korva">Hanmandlu Korva</option>
+                <option value="Prajapathi Dugyala">Prajapathi Dugyala</option>
+                <option value="Ramreddy Kunduri">Ramreddy Kunduri</option>
+            </select>
+        </div>
+
+        <div class="form-group"><label for="jd" class="required">JD</label><input type="number" id="jd" required min="0"></div>
+        <div class="form-group"><label for="mm" class="required">M&M</label><input type="number" id="mm" required min="0"></div>
+        <div class="form-group"><label for="swaraj" class="required">Swaraj</label><input type="number" id="swaraj" required min="0"></div>
+        <div class="form-group"><label for="sonalika" class="required">Sonalika</label><input type="number" id="sonalika" required min="0"></div>
+        <div class="form-group"><label for="eicher" class="required">Eicher</label><input type="number" id="eicher" required min="0"></div>
+        <div class="form-group"><label for="escorts" class="required">Escorts</label><input type="number" id="escorts" required min="0"></div>
+        <div class="form-group"><label for="tafe" class="required">TAFE</label><input type="number" id="tafe" required min="0"></div>
+        <div class="form-group"><label for="nhf" class="required">NHF</label><input type="number" id="nhf" required min="0"></div>
+        <div class="form-group"><label for="kubota" class="required">Kubota</label><input type="number" id="kubota" required min="0"></div>
+        <div class="form-group"><label for="solis" class="required">Solis</label><input type="number" id="solis" required min="0"></div>
+        <div class="form-group"><label for="others" class="required">Others</label><input type="number" id="others" required min="0"></div>
+
+        <button type="submit">Submit Responses</button>
+    </form>
+    
+    <div id="message"></div>
+</div>
+
+<script>
+    // REPLACE THIS URL WITH THE WEB APP URL COPY-PASTED FROM GOOGLE APPS SCRIPT STEP
+    const WEB_APP_URL = "https://docs.google.com/spreadsheets/d/1jbkLAX4EexBnPc2cPXcQQJjRmxIAdf5Qk3XZ8_Xks2E/edit?usp=sharing";
+
+    document.getElementById('mtdForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const msgDiv = document.getElementById('message');
+        msgDiv.style.display = 'block';
+        msgDiv.style.backgroundColor = '#e8f0fe';
+        msgDiv.style.color = '#1a73e8';
+        msgDiv.innerText = "Submitting, please wait...";
+
+        const formData = {
+            smName: document.getElementById('smName').value,
+            jd: document.getElementById('jd').value,
+            mm: document.getElementById('mm').value,
+            swaraj: document.getElementById('swaraj').value,
+            sonalika: document.getElementById('sonalika').value,
+            eicher: document.getElementById('eicher').value,
+            escorts: document.getElementById('escorts').value,
+            tafe: document.getElementById('tafe').value,
+            nhf: document.getElementById('nhf').value,
+            kubota: document.getElementById('kubota').value,
+            solis: document.getElementById('solis').value,
+            others: document.getElementById('others').value
+        };
+
+        fetch(WEB_APP_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Essential step to prevent cross-origin tracking redirect errors with Apps Script
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        })
+        .then(() => {
+            msgDiv.style.backgroundColor = '#e6f4ea';
+            msgDiv.style.color = '#137333';
+            msgDiv.innerText = "Success! Your responses have been recorded.";
+            document.getElementById('mtdForm').reset();
+        })
+        .catch(err => {
+            msgDiv.style.backgroundColor = '#fce8e6';
+            msgDiv.style.color = '#c5221f';
+            msgDiv.innerText = "Error reporting data. Please try again.";
+            console.error(err);
+        });
+    });
+</script>
+</body>
+</html>
