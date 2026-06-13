@@ -522,15 +522,15 @@
             const saleLossLmsVal = parseInt(document.getElementById('saleLossLms').value) || 0;
             const totalBrands = formData.jd + formData.mm + formData.swaraj + formData.sonalika + formData.eicher + formData.escorts + formData.tafe + formData.nhf + formData.kubota + formData.solis + formData.others;
 
-            const marketShareCalculated = totalBrands > 0 ? (formData.jd / totalBrands) * 100 : 0;
-            const piCalculated = totalBrands > 0 ? ((formData.jd + saleLossLmsVal) / totalBrands) * 100 : 0;
+          // Calculate raw decimal fractions (e.g., 0.3333 instead of 33.33)
+const marketShareDecimal = totalBrands > 0 ? (formData.jd / totalBrands) : 0;
+const piDecimal = totalBrands > 0 ? ((formData.jd + saleLossLmsVal) / totalBrands) : 0;
 
-            // Safely pack the custom fields into the dynamic payload list
-            formData.dynamicFields["Sale Loss in LMS"] = saleLossLmsVal;
-            formData.dynamicFields["Total Volume"] = totalBrands;
-            formData.dynamicFields["Market Share (%)"] = parseFloat(marketShareCalculated.toFixed(2));
-            formData.dynamicFields["PI (%)"] = parseFloat(piCalculated.toFixed(2));
-
+// Safely pack the custom fields into the dynamic payload list as pure numbers
+formData.dynamicFields["Sale Loss in LMS"] = saleLossLmsVal;
+formData.dynamicFields["Total Volume"] = totalBrands;
+formData.dynamicFields["Market Share (%)"] = marketShareDecimal;
+formData.dynamicFields["PI (%)"] = piDecimal;
             // Grab any active dynamic territory parameters (stored as text string)
             const fields = smTerritoryMapping[smName];
             if (fields) {
